@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MessageView from './Components/message-view'
+import MessageList from './Components/message-list'
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
       background: 'yellow'
     }
     return (
-      <MessageView/>
+      <MessageList/>
     );
   }
 }

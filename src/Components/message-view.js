@@ -2,19 +2,21 @@ import React, {Component} from 'react';
 
 class MessageView extends Component {
   render(){
+    console.log(this.props)
     return(
       <div className="container">
+        hi
           <div className="from">
               <span className="label">From: </span>
-              <span className="value">John Doe</span>
+              <span className="value">{this.props.message.from}</span>
           </div>
           <div className="status">
               <span className="label">Status: </span>
-              <span className="value"> Unread</span>
+              <span className="value">{this.props.message.status}</span>
           </div>
           <div className="message">
               <span className="label">Message: </span>
-              <span className="value">Have a great day!</span>
+              <span className="value">{this.props.message.content}</span>
           </div>
       </div>
     );
