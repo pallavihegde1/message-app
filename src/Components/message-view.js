@@ -6,6 +6,7 @@ class MessageView extends Component {
     return(
       <div className="container">
         hi
+        { /*single user div*/ }
         <div className="singleMessage">
           <div className="from">
               <span className="label">From: </span>
@@ -20,6 +21,7 @@ class MessageView extends Component {
               <span className="value">{this.props.message.content}</span>
           </div>
         </div>
+        { /* multi messages render */ }
         <div className="messageList">
            { this.props.messages.map((message,index) => (
             <li key={index}> {message.message}</li>
