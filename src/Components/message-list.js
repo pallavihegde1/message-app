@@ -44,13 +44,26 @@ class MessageList extends Component {
     };
   }
 
+  // componentDidMount() {
+  //
+  // }
+  //
+  // componentWillUnmount() {
+  //
+  // }
+
+  buttonClick = (e) => {
+    alert("hi")
+  }
+
   render(){
     const usersindex = this.state.users.map((user,index) => (
       <UserList key={index} user={user}/>
     ))
+
     return(
       <div>
-        <button className="square" onClick={() => this.setState({value: 'X'})}> Click </button>
+        <button className="square" onClick={this.buttonClick}> Click </button>
         <MessageView message={this.state.message} messages={this.state.messages} users={this.state.users}/>
         <hr/>
         {usersindex}
