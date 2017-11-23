@@ -53,7 +53,18 @@ class MessageList extends Component {
   // }
 
   buttonClick = (e) => {
-    alert("hi")
+    this.setState({value: 'X'})
+  }
+
+  changeState = (e) => {
+    this.setState({value: this.state.value + 'Y'})
+  }
+
+
+  changeStateCorrect = (e) => {
+    this.setState((prevState) => ({
+       value: prevState.value + 'new_state'
+    }));
   }
 
   render(){
@@ -64,6 +75,8 @@ class MessageList extends Component {
     return(
       <div>
         <button className="square" onClick={this.buttonClick}> Click </button>
+        <button className="square" onClick={this.changeState}> Change State </button>
+          <button className="square" onClick={this.changeStateCorrect}> Change state preferred </button>
         <MessageView message={this.state.message} messages={this.state.messages} users={this.state.users}/>
         <hr/>
         {usersindex}
