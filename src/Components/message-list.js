@@ -76,7 +76,7 @@ class MessageList extends Component {
       <div>
         <button className="square" onClick={this.buttonClick}> Click </button>
         <button className="square" onClick={this.changeState}> Change State </button>
-          <button className="square" onClick={this.changeStateCorrect}> Change state preferred </button>
+        <button className="square" onClick={this.changeStateCorrect}> Change state preferred </button>
         <MessageView message={this.state.message} messages={this.state.messages} users={this.state.users}/>
         <hr/>
         {usersindex}
