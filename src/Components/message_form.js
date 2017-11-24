@@ -4,19 +4,27 @@ class MessageForm extends Component{
   constructor(props){
     super(props);
 
-    this.state = {title: ''};
+    this.state = {message: ''};
   }
 
-  handleChange(event){
-    this.setState({title: event.target.value});
+  handleChange = (event) => {
+    this.setState({message: event.target.value});
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted');
+    console.log(this.state)
   }
 
   render() {
     return(
       <div>
-        <form>
-          <input type="text" name="content" value={this.state.title} onChange={this.handleChange.bind(this)}/>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" name="message" value={this.state.message} onChange={this.handleChange}/>
+          <button type="submit">Submit</button>
         </form>
+        {/* <MessageList message={this.state.message} /> */}
       </div>
 
     );
